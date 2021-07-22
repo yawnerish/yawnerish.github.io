@@ -1,0 +1,113 @@
+:root {
+    --bright-orange-color: hsl(31, 77%, 52%);
+    --dark-cyan-color: hsl(184, 100%, 22%);
+    --very-dark-cyan-color: hsl(179, 100%, 13%);
+
+    --transparent-white-color: hsla(0, 0%, 100%, 0.75);
+    --very-light-gray-color: hsl(0, 0%, 95%);
+}
+
+:root {
+    --card-width: 306px;
+    --card-height: 500px;
+    --card-container-desktop-width: calc(var(--card-width)*3);
+    --card-container-mobile-height: calc(var(--card-height)*3);    
+}
+
+body {
+    margin: 0;
+    font-size: 15px;
+    font-family: "Lexend Deca";
+    color: var(--transparent-white-color);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.preview-card__container {
+    margin: 170px auto;
+    width: var(--card-container-desktop-width);
+    height: var(--card-height); 
+    display: grid;
+    grid-template-areas: "card card card";
+
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.preview-card__card {
+    grid-area: "card";
+    height: var(--card-height);
+    padding: 50px 46px;
+    line-height: 1.6;
+    position: relative;
+}
+
+.preview-card__card > h1 {
+    font-size: 2.4rem;
+    font-family: "Big Shoulders Display";
+    color: var(--very-light-gray-color);
+    text-transform: uppercase;
+}
+
+.preview-card__card--sedans {
+    background-color: var(--bright-orange-color);
+}
+.preview-card__card--sedans a {
+    color: var(--bright-orange-color);
+}
+
+.preview-card__card--suvs {
+    background-color: var(--dark-cyan-color);
+}
+.preview-card__card--suvs a {
+    color: var(--dark-cyan-color);
+}
+
+.preview-card__card--luxury {
+    background-color: var(--very-dark-cyan-color);
+}
+.preview-card__card--luxury a {
+    color: var(--very-dark-cyan-color);
+}
+
+.preview-card__learn-more {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 24px;
+    font-weight: bold;
+    width: 145px;
+    height: 48px;
+    background-color: var(--very-light-gray-color);
+    text-decoration:  none;
+    position: absolute;
+    bottom: 46px;
+
+    transition: all ease-in-out 0.2s;
+}
+
+.preview-card__learn-more:hover {
+    background-color: rgba(0,0,0,0);
+    color: var(--very-light-gray-color);
+    border: solid;
+    border-width: 3px;
+    border-color: var(--very-light-gray-color);
+}
+
+.attribution {
+    color: #a0a0a0;
+    text-align: center;
+}
+
+@media screen and (max-width: 950px) {
+    .preview-card__container {
+        width: var(--card-width);
+        height: var(--card-container-mobile-height);
+        grid-template-areas: "card"
+                             "card"
+                             "card";
+    }
+}
